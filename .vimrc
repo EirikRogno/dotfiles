@@ -27,6 +27,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Rust file detection and syntax highlighting
 Plugin 'rust-lang/rust.vim'
 
+" Latex stuff
+Plugin 'lervag/vimtex'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -41,3 +44,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+set tabstop=4
+set shiftwidth=4
