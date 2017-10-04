@@ -12,6 +12,10 @@ inoremap <Down> <NOP>
 inoremap <Left> <NOP>
 inoremap <Right> <NOP>
 
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
