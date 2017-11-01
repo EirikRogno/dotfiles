@@ -37,6 +37,9 @@ Plugin 'rust-lang/rust.vim'
 " Latex stuff
 Plugin 'lervag/vimtex'
 
+" Elm syntax highlighting
+Plugin 'ElmCast/elm-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
