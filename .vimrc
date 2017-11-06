@@ -18,6 +18,9 @@ inoremap <Right> <NOP>
 nnoremap j gj
 nnoremap k gk
 
+vnoremap j gj
+vnoremap k gk
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -35,6 +38,9 @@ Plugin 'rust-lang/rust.vim'
 
 " Latex stuff
 Plugin 'lervag/vimtex'
+
+" Elm syntax highlighting
+Plugin 'ElmCast/elm-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
