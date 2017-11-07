@@ -21,6 +21,10 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
+" Fix colors inside tmux
+set background=dark
+set t_Co=256
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
