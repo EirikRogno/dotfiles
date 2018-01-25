@@ -1,7 +1,6 @@
 set relativenumber
 set number
 set incsearch
-set hlsearch
 
 " Disable arrow keys
 noremap <Up> <NOP>
