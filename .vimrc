@@ -1,6 +1,7 @@
 set relativenumber
 set number
 set incsearch
+set breakindent
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -19,6 +20,9 @@ nnoremap k gk
 
 vnoremap j gj
 vnoremap k gk
+
+" auto break long lines in tex files
+autocmd BufRead *.tex set tw=78
 
 " Fix colors inside tmux
 set background=dark
