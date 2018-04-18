@@ -2,6 +2,8 @@ set relativenumber
 set number
 set incsearch
 set breakindent
+set tabstop=4
+set shiftwidth=4
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -49,6 +51,9 @@ Plugin 'lervag/vimtex'
 " Elm syntax highlighting
 Plugin 'ElmCast/elm-vim'
 
+" Tab numbers
+Plugin 'mkitt/tabline.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -64,5 +69,3 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-set tabstop=4
-set shiftwidth=4
