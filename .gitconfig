@@ -3,4 +3,4 @@
 	email = eirik.rogno@gmail.com
 [core]
 	editor = vim
-	excludesfile = /home/eirik/.gitignore
+	excludesfile = ~/.gitignore 
