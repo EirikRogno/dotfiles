@@ -30,6 +30,18 @@ autocmd BufRead *.tex set tw=78
 set background=dark
 set t_Co=256
 
+" Autoformat rust files on save
+let g:rustfmt_autosave = 1
+
+" Register rust language server
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -56,6 +68,13 @@ Plugin 'mkitt/tabline.vim'
 
 " Auto close brackets
 Plugin 'townk/vim-autoclose'
+
+"Language server
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+
+" Autocompletion
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
