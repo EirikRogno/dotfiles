@@ -2,8 +2,8 @@ set relativenumber
 set number
 set incsearch
 set breakindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 
 " Disable arrow keys
 noremap <Up> <NOP>
@@ -57,12 +57,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Rust file detection and syntax highlighting
 Plugin 'rust-lang/rust.vim'
 
-" Latex stuff
-Plugin 'lervag/vimtex'
-
-" Elm syntax highlighting
-Plugin 'ElmCast/elm-vim'
-
 " Tab numbers
 Plugin 'mkitt/tabline.vim'
 
@@ -75,6 +69,10 @@ Plugin 'prabirshrestha/vim-lsp'
 
 " Autocompletion
 Plugin 'Valloric/YouCompleteMe'
+
+" Collection of language packs
+Plugin 'sheerun/vim-polyglot'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
