@@ -163,9 +163,6 @@ bindsym $mod+Ctrl+Right move workspace to output right
 bindsym $mod+q exec i3lock
 exec --no-startup-id "xautolock -detectsleep -time 5 -locker 'i3lock -f -c 002776' -notify 30 -notifier \"notify-send -t 2000 'Locking screen in 30 seconds'\""
 
-# Run SB1A inituser
-exec --no-startup-id "/usr/local/bin/sb1a-inituser.sh"
-
 # Startup nm-applet and some support components from Gnome and xfce.
 exec --no-startup-id "pidof xfce4-power-manager || xfce4-power-manager"
 exec --no-startup-id "pidof /usr/libexec/polkit-gnome-authentication-agent-1 || /usr/libexec/polkit-gnome-authentication-agent-1"
@@ -195,3 +192,5 @@ bindsym $mod+o mode "$mode_system"
 # Use Norwegian and US layouts, make caps lock an additional escape
 
 exec --no-startup-id "setxkbmap -option 'grp:shifts_toggle, caps:escape' -layout 'us,no'"
+
+exec xrandr --dpi 220
