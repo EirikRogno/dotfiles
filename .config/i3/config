@@ -191,6 +191,13 @@ bindsym $mod+o mode "$mode_system"
 
 # Use Norwegian and US layouts, make caps lock an additional escape
 
-exec --no-startup-id "setxkbmap -option 'grp:shifts_toggle, caps:escape' -layout 'us,no'"
+exec --no-startup-id "setxkbmap -option 'grp:shifts_toggle, caps:escape' -layout 'no, us'"
 
-exec xrandr --dpi 220
+# Sound control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Screen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
