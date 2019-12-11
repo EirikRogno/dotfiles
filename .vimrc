@@ -73,6 +73,12 @@ Plugin 'Valloric/YouCompleteMe'
 " Collection of language packs
 Plugin 'sheerun/vim-polyglot'
 
+" Vue highlighting
+Plugin 'posva/vim-vue'
+
+"Prettier
+Plugin 'prettier/vim-prettier'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

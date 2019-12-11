@@ -149,13 +149,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-				position top
-}
-
 # move focused workspace to output
 bindsym $mod+Ctrl+Left move workspace to output left
 bindsym $mod+Ctrl+Right move workspace to output right
@@ -190,15 +183,38 @@ mode "$mode_system" {
 }
 bindsym $mod+o mode "$mode_system"
 
-# Use Norwegian and US layouts, make caps lock an additional escape
+# Use Norwegian layouts, make caps lock an additional escape
 
-exec --no-startup-id "setxkbmap -option 'grp:shifts_toggle, caps:escape' -layout 'no, us'"
+exec --no-startup-id "setxkbmap -option 'caps:escape' -layout 'no'"
 
-# Sound control
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+# Enable screen brightness (and pipe to status-bar)
+bindsym XF86MonBrightnessUp exec ~/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec ~/bin/brightness.sh down
 
-# Screen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Remove annoying borders
+for_window [class="^.*"] border pixel 0
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+	font pango:DejaVu Sans Mono, FontAwesome 9 
+    strip_workspace_numbers yes
+    colors {
+        background #2f343f
+        statusline #2f343f
+        separator #4b5262
+
+        # colour of border, background, and text
+        focused_workspace       #2f343f #bf616a #d8dee8
+        active_workspace        #2f343f #2f343f #d8dee8
+        inactive_workspace      #2f343f #2f343f #d8dee8
+        urgent_workspacei       #2f343f #ebcb8b #2f343f
+    }
+    status_command i3status 
+		position top
+}
