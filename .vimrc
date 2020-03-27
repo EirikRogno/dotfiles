@@ -5,6 +5,8 @@ set breakindent
 set tabstop=2
 set shiftwidth=2
 
+set visualbell
+
 " Disable arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>

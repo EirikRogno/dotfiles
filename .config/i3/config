@@ -183,9 +183,15 @@ mode "$mode_system" {
 }
 bindsym $mod+o mode "$mode_system"
 
-# Use Norwegian layouts, make caps lock an additional escape
+bindsym $mod+x move workspace to output right
 
-exec --no-startup-id "setxkbmap -option 'caps:escape' -layout 'no'"
+# Use US and Norwegian layouts, make caps lock an additional escape
+
+exec --no-startup-id "setxkbmap -option 'grp:shifts_toggle, caps:escape' -layout 'us,no'"
+
+# Background color LightSlateGray
+
+exec --no-startup-id "xsetroot -solid '#778899'"
 
 # Enable screen brightness (and pipe to status-bar)
 bindsym XF86MonBrightnessUp exec ~/bin/brightness.sh up
@@ -202,19 +208,20 @@ for_window [class="^.*"] border pixel 0
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+	tray_output primary
 	font pango:DejaVu Sans Mono, FontAwesome 9 
-    strip_workspace_numbers yes
-    colors {
-        background #2f343f
-        statusline #2f343f
-        separator #4b5262
+	strip_workspace_numbers yes
+	colors {
+			background #2f343f
+			statusline #2f343f
+			separator #4b5262
 
-        # colour of border, background, and text
-        focused_workspace       #2f343f #bf616a #d8dee8
-        active_workspace        #2f343f #2f343f #d8dee8
-        inactive_workspace      #2f343f #2f343f #d8dee8
-        urgent_workspacei       #2f343f #ebcb8b #2f343f
-    }
-    status_command i3status 
-		position top
+			# colour of border, background, and text
+			focused_workspace       #2f343f #bf616a #d8dee8
+			active_workspace        #2f343f #2f343f #d8dee8
+			inactive_workspace      #2f343f #2f343f #d8dee8
+			urgent_workspacei       #2f343f #ebcb8b #2f343f
+	}
+	status_command i3status 
+	position top
 }
